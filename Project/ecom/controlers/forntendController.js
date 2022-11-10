@@ -1,5 +1,6 @@
 module.exports={
     home:(req,res,next)=>{
+        
         res.render('forntend/index',{title:'home'});
     },
     blogs:(req,res,next)=>{
