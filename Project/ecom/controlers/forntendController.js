@@ -1,6 +1,7 @@
+// const {NAME,PORT,DB_URL}=require("./../config/index")
+
 module.exports={
     home:(req,res,next)=>{
-        
         res.render('forntend/index',{title:'home'});
     },
     blogs:(req,res,next)=>{

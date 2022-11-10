@@ -9,6 +9,7 @@ const {engine}=require('express-handlebars');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
+require('./config/database');
 
 var app = express();
 
