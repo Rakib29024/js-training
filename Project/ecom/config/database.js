@@ -1,11 +1,11 @@
 // Import the mongoose module
 const mongoose = require("mongoose");
-
+const {DB_URL} =require("./index");
 
 
 const startDBConnection=()=>{
     // Set up default mongoose connection
-    const mongoDB = "mongodb://localhost:27017/ecom";
+    const mongoDB = DB_URL;
     mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true }).then(()=>{
         console.log("DB server started")
     }).catch((err)=>{
