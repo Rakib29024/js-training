@@ -2,7 +2,10 @@ var express = require('express');
 var router = express.Router();
 const blogRequest=require("../request/blog")
 const BlogController=require('../controlers/blogControler.js');
+const DashboardController=require('../controlers/dashboardController.js');
 /* GET home page. */
+
+router.get('/',DashboardController.index);
 
 //blog
 router.get('/blogs',BlogController.index);

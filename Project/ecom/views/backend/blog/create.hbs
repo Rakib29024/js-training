@@ -1,8 +1,58 @@
-<h1>Blog Create</h1>
-<form action="/admin/blog/store" method="POST">
-    <input type="text" name="title"/>
-    <input type="text" name="details"/>
-    <input type="file" name="image"/>
+<main id="main" class="main">
 
-    <button type="submit">Submit</button>
-</form>
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Create</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Floating labels Form</h5>
+
+              <!-- Floating Labels Form -->
+              <form class="row g-3" method="POST" action="/admin/blog/store">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control form-control-sm" id="floatingName" placeholder="Title" name="title">
+                    <label for="floatingName">Title</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control form-control-sm" id="floatingName" placeholder="Slug" name="slug">
+                    <label for="floatingName">Slug</label>
+                  </div>
+                </div>
+
+
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control form-control-sm" name="details" placeholder="Address" id="floatingTextarea" style="height: 100px;" ></textarea>
+                    <label for="floatingTextarea">Details</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="col-md-12">
+                        <label for="floatingCity">Image</label>
+                    <div class="form-floating">
+                      <input type="file" class="form-control form-control-sm" name="image" id="floatingCity">
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+              </form><!-- End floating Labels Form -->
+
+            </div>
+          </div>
+    </section>
+</main>
