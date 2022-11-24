@@ -19,10 +19,30 @@ module.exports={
         res.render('backend/blog/create', { title: 'blogs',layout:'backend/layout' });
     },
     edit:(req, res, next)=> {
+                //json
+        // res.json({'id':req.params.id});
+        BlogModel.findById(req.params.id)
+        .then((blog)=>{
+            res.json({"blog":blog});
+        })
+        .catch((err)=>{
+            res.json({"error":"Somethiong went wrong!"});
+        })
+        
         // blog list
         res.render('index', { title: 'blogs' });
     },
     show:(req, res, next)=> {
+        //json
+        // res.json({'id':req.params.id});
+        BlogModel.findById(req.params.id)
+        .then((blog)=>{
+            res.json({"blog":blog});
+        })
+        .catch((err)=>{
+            res.json({"error":"Somethiong went wrong!"});
+        })
+
         // blog list
         res.render('index', { title: 'blogs' });
     },
