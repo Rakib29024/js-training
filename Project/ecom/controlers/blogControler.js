@@ -8,11 +8,23 @@ module.exports={
 
         BlogModel.find((err,docs)=>{
             if(err){
-                return res.json({error:"Something went wrong!"+err})
+                return res.json({error:"Something went wrong!"+err});
             }
-            return res.json({blogs:docs});
+            const data=[];
+            docs.forEach(element => {
+                data.push({
+                    title:element.title,
+                    details:element.details,
+                    image:element.image,
+                    id:element._id
+                });
+            });
+            
+
+            // return res.json({blogs:docs});
+            res.render('backend/blog/index', { title: 'Blogs',layout:"backend/layout",data:data });
         });
-        res.render('backend/blog/index', { title: 'Blogs',layout:"backend/layout" });
+
     },
     create:(req, res, next)=> {
         // blog list
@@ -37,18 +49,31 @@ module.exports={
         // res.json({'id':req.params.id});
         BlogModel.findById(req.params.id)
         .then((blog)=>{
-            res.json({"blog":blog});
+            // blog list
+            const details={
+                title:blog.title,
+                details:blog.details,
+                image:blog.image
+            }
+            // console.log(details);
+            res.render('backend/blog/show', { title: 'Blog',layout:"backend/layout",blog:details });
         })
         .catch((err)=>{
             res.json({"error":"Somethiong went wrong!"});
         })
 
-        // blog list
-        res.render('index', { title: 'blogs' });
+
     },
     delete:(req, res, next)=> {
+
+        BlogModel.findByIdAndRemove(req.params.id).then(()=>{
+            console.log("deleted");
+        }).catch((error)=>{
+            console.log("could not deleted due to " +error);
+        })
+        res.redirect("/admin/blogs");
         // blog list
-        res.render('index', { title: 'blogs' });
+        // res.render('index', { title: 'blogs' });
     },
     update:(req, res, next)=> {
         // blog list

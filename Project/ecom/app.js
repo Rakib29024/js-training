@@ -41,6 +41,10 @@ app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
+app.get("*",(rea,res)=>{
+  res.json({error:"Page not found"});
+})
+
 app.use(function(req, res, next) {
   next(createError(404));
 });
