@@ -14,7 +14,7 @@ router.get('/blog/:id/edit', BlogController.edit);
 router.post('/blog/:id/delete', BlogController.delete);
 router.get('/blog/:id/show', BlogController.show);
 router.post('/blog/store',blogRequest.store, BlogController.store);
-router.put('/blog/:id/update',blogRequest.update,BlogController.update);
+router.post('/blog/:id/update',blogRequest.update,BlogController.update);
 
 // team
 

@@ -1,7 +1,8 @@
-
-
 const { validationResult } = require('express-validator');
 const BlogModel=require('../models/Blog');
+const fs=require("fs");
+
+
 module.exports={
     index:(req, res, next)=> {
         // blog list
@@ -31,20 +32,6 @@ module.exports={
         res.render('backend/blog/create', { title: 'blogs',layout:'backend/layout' });
     },
     edit:(req, res, next)=> {
-                //json
-        // res.json({'id':req.params.id});
-        BlogModel.findById(req.params.id)
-        .then((blog)=>{
-            res.json({"blog":blog});
-        })
-        .catch((err)=>{
-            res.json({"error":"Somethiong went wrong!"});
-        })
-        
-        // blog list
-        res.render('index', { title: 'blogs' });
-    },
-    show:(req, res, next)=> {
         //json
         // res.json({'id':req.params.id});
         BlogModel.findById(req.params.id)
@@ -52,6 +39,25 @@ module.exports={
             // blog list
             const details={
                 title:blog.title,
+                slug:blog.slug,
+                id:blog._id,
+                details:blog.details,
+                image:blog.image
+            }
+            // console.log(details);
+            res.render('backend/blog/edit', { title: 'Blog Edit',layout:"backend/layout",blog:details });
+        })
+    },
+    show:(req, res, next)=> {
+        //json
+        // res.json({'id':req.params.id});
+        BlogModel.findById(req.params.id)
+        .then((blog)=>{
+            
+            // blog list
+            const details={
+                title:blog.title,
+                slug:blog.slug,
                 details:blog.details,
                 image:blog.image
             }
@@ -65,19 +71,57 @@ module.exports={
 
     },
     delete:(req, res, next)=> {
+        BlogModel.findByIdAndRemove(req.params.id,(err,blog)=>{
+            if(err){
+                console.log("Could not deleted.");
+            }
 
-        BlogModel.findByIdAndRemove(req.params.id).then(()=>{
-            console.log("deleted");
-        }).catch((error)=>{
-            console.log("could not deleted due to " +error);
-        })
-        res.redirect("/admin/blogs");
-        // blog list
-        // res.render('index', { title: 'blogs' });
+            // /delete file
+            try {
+                fs.unlink("public/"+blog.image,()=>{
+                    console.log("File deleted====================================");
+                });
+            } catch (error) {
+                console.log("Something went wrong====================================");
+            }
+
+            // /
+            res.redirect("/admin/blogs");
+
+        });
+        
     },
     update:(req, res, next)=> {
-        // blog list
-        res.render('index', { title: 'blogs' });
+        const errors=validationResult(req);
+        if(!errors.isEmpty()){
+            return res.json({errors:errors.mapped()});
+        }
+        let sampleFile;
+        if (!req.files || Object.keys(req.files).length === 0) {
+          return res.status(400).send('No files were uploaded.');
+        }
+
+        // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+        sampleFile = req.files.image;
+        let rnd=new Date().valueOf();
+        let filePath='upload/' +rnd+sampleFile.name;
+      
+        // Use the mv() method to place the file somewhere on your server
+        sampleFile.mv('public/'+filePath, function(err) {
+          if (err)
+            res.redirect("/admin/blog/create");
+        });
+
+        // /
+        BlogModel.findByIdAndUpdate(req.params.id,{
+            title:req.body.title,
+            slug:req.body.slug,
+            details:req.body.details,
+            image:filePath
+        },(err,blog)=>{
+            res.redirect("/admin/blogs");
+        });
+
     },
     store:(req, res, next)=> {
         const errors=validationResult(req);
@@ -97,9 +141,7 @@ module.exports={
         // Use the mv() method to place the file somewhere on your server
         sampleFile.mv('public/'+filePath, function(err) {
           if (err)
-            return res.status(500).send(err);
-      
-          res.send('File uploaded!');
+            res.redirect("/admin/blog/create");
         });
 
         // /
@@ -113,9 +155,9 @@ module.exports={
 
         blog.save((err,newBlog)=>{
             if(err){
-              return res.json({error:"Something went wrong!"+err});
+              res.json({error:"Something went wrong!"+err});
             }
-            return res.json({blog:newBlog});
+            res.redirect("/admin/blogs");
         });
 
 

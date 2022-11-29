@@ -33,13 +33,24 @@
                     <td>
                       <img src="/{{image}}" width="60px" alt="{{title}}">
                     </td>
-                    <td>
+                    <td class="w-50 align-center text-center">
+                      <div class="row">
+                        <div class="col">
                         <a href="/admin/blog/{{id}}/show" class="btn btn-outline-info btn-sm">Show</a>
+
+                        </div>
+                        <div class="col">
                         <a href="/admin/blog/{{id}}/edit" class="btn btn-outline-primary btn-sm">Edit</a>
+
+                        </div>
+                        <div class="col">
 
                         <form action="/admin/blog/{{id}}/delete" method="post">
                           <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
                         </form>
+                        </div>
+                      </div>
+
                     </td>
                   </tr>
                   {{/each}}
