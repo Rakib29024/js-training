@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const {menus}=require("../middleware/menuMiddleware");
+router.use(menus);
 
 var forntendController = require('../controlers/forntendController');
 
