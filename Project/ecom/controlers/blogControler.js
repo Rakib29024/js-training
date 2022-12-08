@@ -2,14 +2,12 @@ const { validationResult } = require('express-validator');
 const BlogModel=require('../models/Blog');
 const fs=require("fs");
 
-
 module.exports={
     index:(req, res, next)=> {
         // blog list
-
         BlogModel.find((err,docs)=>{
             if(err){
-                return res.json({error:"Something went wrong!"+err});
+                res.render("error",{errorStatus:500});
             }
             const data=[];
             docs.forEach(element => {
@@ -20,8 +18,6 @@ module.exports={
                     id:element._id
                 });
             });
-            
-
             // return res.json({blogs:docs});
             res.render('backend/blog/index', { title: 'Blogs',layout:"backend/layout",data:data });
         });
@@ -73,29 +69,67 @@ module.exports={
     delete:(req, res, next)=> {
         BlogModel.findByIdAndRemove(req.params.id,(err,blog)=>{
             if(err){
-                console.log("Could not deleted.");
+                res.render("error",{errorStatus:500});
             }
-
             // /delete file
             try {
-                fs.unlink("public/"+blog.image,()=>{
-                    console.log("File deleted====================================");
-                });
+                fs.unlink("public/"+blog.image,()=>{});
             } catch (error) {
-                console.log("Something went wrong====================================");
+                
             }
-
-            // /
             res.redirect("/admin/blogs");
-
         });
         
     },
+    store:(req, res, next)=> {
+        const errors=validationResult(req);
+        if(!errors.isEmpty()){
+            return res.render("backend/blog/create",{layout:"backend/layout",errors:errors.mapped()})
+            // return res.json({errors:errors.mapped()});
+        }
+
+        let sampleFile,filePath;
+        if (req.files || Object.keys(req.files).length !== 0) {
+            // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+            sampleFile = req.files.image;
+            let rnd=new Date().valueOf();
+            filePath='upload/' +rnd+sampleFile.name;
+        
+            // Use the mv() method to place the file somewhere on your server
+            sampleFile.mv('public/'+filePath, function(err) {
+            if (err)
+                res.redirect("/admin/blog/create");
+            });
+        }
+
+
+
+        // /
+
+        const blog=new BlogModel({
+            title:req.body.title,
+            slug:req.body.slug,
+            details:req.body.details,
+            image:filePath
+        });
+
+        blog.save((err,newBlog)=>{
+            if(err){
+                res.redirect("/admin/blog/create");
+            }
+            res.redirect("/admin/blogs");
+        });
+
+
+
+        // return res.json(req.body);
+        // res.render('index', { title: 'blogs' });
+    },
     update:(req, res, next)=> {
         const errors=validationResult(req);
-
         if(!errors.isEmpty()){
-            return res.json({errors:errors.mapped()});
+            // return res.redirect("/admin/blog/"+req.params.id+"/edit");
+            return res.render("backend/blog/edit",{layout:"backend/layout",errors:errors.mapped()});
         }
         let sampleFile,filePath;
 
@@ -107,7 +141,7 @@ module.exports={
             // Use the mv() method to place the file somewhere on your server
             sampleFile.mv('public/'+filePath, function(err) {
                 if (err)
-                res.redirect("/admin/blog/"+req.params.id+"/edit");
+                    res.redirect("/admin/blog/"+req.params.id+"/edit");
             });
         }
         const blogObj={
@@ -128,47 +162,5 @@ module.exports={
             res.redirect("/admin/blogs");
         });
 
-    },
-    store:(req, res, next)=> {
-        const errors=validationResult(req);
-        if(!errors.isEmpty()){
-            return res.json({errors:errors.mapped()});
-        }
-        let sampleFile;
-        if (!req.files || Object.keys(req.files).length === 0) {
-          return res.status(400).send('No files were uploaded.');
-        }
-
-        // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-        sampleFile = req.files.image;
-        let rnd=new Date().valueOf();
-        let filePath='upload/' +rnd+sampleFile.name;
-      
-        // Use the mv() method to place the file somewhere on your server
-        sampleFile.mv('public/'+filePath, function(err) {
-          if (err)
-            res.redirect("/admin/blog/create");
-        });
-
-        // /
-
-        const blog=new BlogModel({
-            title:req.body.title,
-            slug:req.body.slug,
-            details:req.body.details,
-            image:filePath
-        });
-
-        blog.save((err,newBlog)=>{
-            if(err){
-              res.json({error:"Something went wrong!"+err});
-            }
-            res.redirect("/admin/blogs");
-        });
-
-
-
-        // return res.json(req.body);
-        // res.render('index', { title: 'blogs' });
     }
 }

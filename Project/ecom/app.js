@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const {engine}=require('express-handlebars');
 const fileUpload = require('express-fileupload');
+const helpers=require('./lib/helper');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -25,7 +26,8 @@ app.engine('.hbs', engine(
     defaultView:'frontend/index',
     layoutsDir:__dirname+'/views/layouts',
     defaultLayout:'frontend/layout',
-    partialsDir:__dirname+'/views/partials'
+    partialsDir:__dirname+'/views/partials',
+    helpers:helpers
   }
 ));
 
