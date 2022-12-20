@@ -13,7 +13,7 @@ module.exports={
             docs.forEach(element => {
                 data.push({
                     title:element.title,
-                    details:element.details,
+                    
                     image:element.image,
                     id:element._id
                 });
@@ -35,9 +35,8 @@ module.exports={
             // slider list
             const details={
                 title:slider.title,
-                slug:slider.slug,
+                
                 id:slider._id,
-                details:slider.details,
                 image:slider.image
             }
             // console.log(details);
@@ -53,7 +52,7 @@ module.exports={
             // slider list
             const details={
                 title:slider.title,
-                slug:slider.slug,
+                
                 details:slider.details,
                 image:slider.image
             }
@@ -108,8 +107,7 @@ module.exports={
 
         const slider=new SliderModel({
             title:req.body.title,
-            slug:req.body.slug,
-            details:req.body.details,
+
             image:filePath
         });
 
@@ -146,8 +144,6 @@ module.exports={
         }
         const sliderObj={
             title:req.body.title,
-            slug:req.body.slug,
-            details:req.body.details
         };
 
         if(filePath){

@@ -16,8 +16,8 @@
               <h5 class="card-title">Floating labels Form</h5>
 
               <!-- Floating Labels Form -->
-              <form class="row g-3" method="POST" action="/admin/blog/store" encType="multipart/form-data">
-                <div class="col-md-6">
+              <form class="row g-3" method="POST" action="/admin/contact-us/store" encType="multipart/form-data">
+                <div class="col-md-12">
                   <div class="form-floating">
                     <input type="text" class="form-control form-control-sm" id="floatingName" placeholder="Title" name="title">
                     <label for="floatingName">Title</label>
@@ -26,17 +26,6 @@
                     </b>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input type="text" class="form-control form-control-sm" id="floatingName" placeholder="Slug" name="slug">
-                    <label for="floatingName">Slug</label>
-                    <b class="text-danger">
-                    {{errors.slug.msg}}
-                    </b>
-                    
-                  </div>
-                </div>
-
 
                 <div class="col-12">
                   <div class="form-floating">
@@ -49,9 +38,9 @@
                 </div>
                 <div class="col-md-12">
                   <div class="col-md-12">
-                        <label for="floatingCity">Image</label>
+                        <label for="floatingCity">Icon</label>
                     <div class="form-floating">
-                      <input type="file" class="form-control form-control-sm" name="image" id="floatingCity">
+                      <input type="file" class="form-control form-control-sm" name="icon" id="floatingCity">
                       
                     </div>
                   </div>

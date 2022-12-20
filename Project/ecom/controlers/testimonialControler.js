@@ -12,7 +12,8 @@ module.exports={
             const data=[];
             docs.forEach(element => {
                 data.push({
-                    title:element.title,
+                    name:element.name,
+                    designation:element.designation,
                     details:element.details,
                     image:element.image,
                     id:element._id
@@ -34,8 +35,8 @@ module.exports={
         .then((testimonial)=>{
             // testimonial list
             const details={
-                title:testimonial.title,
-                slug:testimonial.slug,
+                name:testimonial.name,
+                designation:testimonial.designation,
                 id:testimonial._id,
                 details:testimonial.details,
                 image:testimonial.image
@@ -52,8 +53,8 @@ module.exports={
             
             // testimonial list
             const details={
-                title:testimonial.title,
-                slug:testimonial.slug,
+                name:testimonial.name,
+                designation:testimonial.designation,
                 details:testimonial.details,
                 image:testimonial.image
             }
@@ -107,8 +108,8 @@ module.exports={
         // /
 
         const testimonial=new TestimonialModel({
-            title:req.body.title,
-            slug:req.body.slug,
+            name:req.body.name,
+            designation:req.body.designation,
             details:req.body.details,
             image:filePath
         });
@@ -145,8 +146,8 @@ module.exports={
             });
         }
         const testimonialObj={
-            title:req.body.title,
-            slug:req.body.slug,
+            name:req.body.name,
+            designation:req.body.designation,
             details:req.body.details
         };
 

@@ -8,6 +8,11 @@ const contactUsController=require('../controlers/contactUsControler');
 const sliderController=require('../controlers/sliderControler');
 const teamController=require('../controlers/teamControler');
 const testimonialController=require('../controlers/testimonialControler');
+const aboutRequest=require('../request/about');
+const teamRequest=require('../request/team');
+const testimonialRequest=require('../request/testimonial');
+const contactUsRequest=require('../request/contactUs');
+const sliderRequest=require('../request/slider');
 /* GET home page. */
 
 router.get('/',DashboardController.index);
@@ -22,13 +27,13 @@ router.post('/blog/store',blogRequest.store, BlogController.store);
 router.post('/blog/:id/update',blogRequest.update,BlogController.update);
 
 //about
-router.get('/abouts',aboutController.index);
-router.get('/about/create', aboutController.create);
-router.get('/about/:id/edit', aboutController.edit);
-router.post('/about/:id/delete', aboutController.delete);
-router.get('/about/:id/show', aboutController.show);
-router.post('/about/store',aboutRequest.store, aboutController.store);
-router.post('/about/:id/update',aboutRequest.update,aboutController.update);
+router.get('/about-us',aboutController.index);
+router.get('/about-us/create', aboutController.create);
+router.get('/about-us/:id/edit', aboutController.edit);
+router.post('/about-us/:id/delete', aboutController.delete);
+router.get('/about-us/:id/show', aboutController.show);
+router.post('/about-us/store',aboutRequest.store, aboutController.store);
+router.post('/about-us/:id/update',aboutRequest.update,aboutController.update);
 
 //team
 router.get('/teams',teamController.index);

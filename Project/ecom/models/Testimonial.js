@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-module.exports = mongoose.model("Blog", new mongoose.Schema({
+module.exports = mongoose.model("Testimonial", new mongoose.Schema({
     name: {
       type: String,
       required: true,

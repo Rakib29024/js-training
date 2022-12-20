@@ -16,38 +16,77 @@
               <h5 class="card-title">Floating labels Form</h5>
 
               <!-- Floating Labels Form -->
-              <form class="row g-3" method="POST" action="/admin/blog/{{blog.id}}/update" encType="multipart/form-data">
+              <form class="row g-3" method="POST" action="/admin/team/{{team.id}}/update" encType="multipart/form-data">
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input value="{{blog.title}}" type="text" class="form-control form-control-sm" id="floatingName" placeholder="Title" name="title">
-                    <label for="floatingName">Title</label>
-                    <span class="badge text-danger"> {{errors.title.msg}}</span>
+                    <input value="{{team.name}}" type="text" class="form-control form-control-sm" id="floatingName" placeholder="name" name="name">
+                    <label for="floatingName">Name</label>
+                    <span class="badge text-danger"> {{errors.name.msg}}</span>
                    
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="text" value="{{blog.slug}}" class="form-control form-control-sm" id="floatingName" placeholder="Slug" name="slug">
-                    <label for="floatingName">Slug</label>
+                    <input type="text" value="{{team.designation}}" class="form-control form-control-sm" id="floatingName" placeholder="designation" name="designation">
+                    <label for="floatingName">Designation</label>
+                    <span class="badge text-danger"> {{errors.designation.msg}}</span>
+
                   </div>
                 </div>
 
 
-                <div class="col-12">
+
+
+                                <div class="col-md-6">
                   <div class="form-floating">
-                    <textarea class="form-control form-control-sm" name="details" placeholder="Address" id="floatingTextarea" style="height: 100px;" >{{blog.details}}</textarea>
-                    <label for="floatingTextarea">Details</label>
+                    <input type="text" value="{{team.facebook}}" class="form-control form-control-sm" id="floatingName" placeholder="facebook" name="facebook">
+                    <label for="floatingName">Facebook</label>
+                    <span class="badge text-danger"> {{errors.facebook.msg}}</span>
+
                   </div>
                 </div>
-                <div class="col-md-12">
+
+
+                                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" value="{{team.twitter}}" class="form-control form-control-sm" id="floatingName" placeholder="twitter" name="twitter">
+                    <label for="floatingName">Twitter</label>
+                    <span class="badge text-danger"> {{errors.twitter.msg}}</span>
+
+                  </div>
+                </div>
+
+
+                                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" value="{{team.instagram}}" class="form-control form-control-sm" id="floatingName" placeholder="instagram" name="instagram">
+                    <label for="floatingName">Instagram</label>
+                    <span class="badge text-danger"> {{errors.instagram.msg}}</span>
+
+                  </div>
+                </div>
+
+                                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" value="{{team.linkedin}}" class="form-control form-control-sm" id="floatingName" placeholder="linkedin" name="linkedin">
+                    <label for="floatingName">Linkedin</label>
+                    <span class="badge text-danger"> {{errors.linkedin.msg}}</span>
+
+                  </div>
+                </div>
+
+
+                                <div class="col-md-12">
                   <div class="col-md-12">
                         <label for="floatingCity">Image</label>
                     <div class="form-floating">
-                      <img src="/{{blog.image}}" width="200px" alt="{{blog.title}}">
+                      <img src="/{{team.image}}" width="200px" alt="{{team.title}}">
                       <input type="file" class="form-control form-control-sm" name="image" id="floatingCity">
                     </div>
                   </div>
                 </div>
+
+
                 <div class="text-center">
                   <button type="submit" class="btn btn-primary">Submit</button>
                   <button type="reset" class="btn btn-secondary">Reset</button>

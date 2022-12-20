@@ -16,34 +16,21 @@
               <h5 class="card-title">Floating labels Form</h5>
 
               <!-- Floating Labels Form -->
-              <form class="row g-3" method="POST" action="/admin/blog/{{blog.id}}/update" encType="multipart/form-data">
-                <div class="col-md-6">
+              <form class="row g-3" method="POST" action="/admin/slider/{{slider.id}}/update" encType="multipart/form-data">
+                <div class="col-md-12">
                   <div class="form-floating">
-                    <input value="{{blog.title}}" type="text" class="form-control form-control-sm" id="floatingName" placeholder="Title" name="title">
+                    <input value="{{slider.title}}" type="text" class="form-control form-control-sm" id="floatingName" placeholder="Title" name="title">
                     <label for="floatingName">Title</label>
                     <span class="badge text-danger"> {{errors.title.msg}}</span>
                    
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input type="text" value="{{blog.slug}}" class="form-control form-control-sm" id="floatingName" placeholder="Slug" name="slug">
-                    <label for="floatingName">Slug</label>
-                  </div>
-                </div>
 
-
-                <div class="col-12">
-                  <div class="form-floating">
-                    <textarea class="form-control form-control-sm" name="details" placeholder="Address" id="floatingTextarea" style="height: 100px;" >{{blog.details}}</textarea>
-                    <label for="floatingTextarea">Details</label>
-                  </div>
-                </div>
                 <div class="col-md-12">
                   <div class="col-md-12">
                         <label for="floatingCity">Image</label>
                     <div class="form-floating">
-                      <img src="/{{blog.image}}" width="200px" alt="{{blog.title}}">
+                      <img src="/{{slider.image}}" width="200px" alt="{{slider.title}}">
                       <input type="file" class="form-control form-control-sm" name="image" id="floatingCity">
                     </div>
                   </div>

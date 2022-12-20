@@ -16,34 +16,13 @@
               <h5 class="card-title">Floating labels Form</h5>
 
               <!-- Floating Labels Form -->
-              <form class="row g-3" method="POST" action="/admin/blog/store" encType="multipart/form-data">
-                <div class="col-md-6">
+              <form class="row g-3" method="POST" action="/admin/slider/store" encType="multipart/form-data">
+                <div class="col-md-12">
                   <div class="form-floating">
                     <input type="text" class="form-control form-control-sm" id="floatingName" placeholder="Title" name="title">
                     <label for="floatingName">Title</label>
                     <b class="text-danger">
                       {{errors.title.msg}}
-                    </b>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input type="text" class="form-control form-control-sm" id="floatingName" placeholder="Slug" name="slug">
-                    <label for="floatingName">Slug</label>
-                    <b class="text-danger">
-                    {{errors.slug.msg}}
-                    </b>
-                    
-                  </div>
-                </div>
-
-
-                <div class="col-12">
-                  <div class="form-floating">
-                    <textarea class="form-control form-control-sm" name="details" placeholder="Address" id="floatingTextarea" style="height: 100px;" ></textarea>
-                    <label for="floatingTextarea">Details</label>
-                    <b class="text-danger">
-                      {{errors.details.msg}}
                     </b>
                   </div>
                 </div>

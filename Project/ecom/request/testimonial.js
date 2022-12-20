@@ -10,7 +10,7 @@ exports.store=[
 
 
 exports.update=[
-    check('title',"Invalid title").not().isEmpty().trim(),
+    check('name',"Invalid name").not().isEmpty().trim(),
     check('details',"Invalid title").not().isEmpty().trim(),
     check('designation',"Invalid designation").not().isEmpty().trim(),
     check('image',"Invalid title")

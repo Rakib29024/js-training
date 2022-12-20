@@ -14,7 +14,7 @@ module.exports={
                 data.push({
                     title:element.title,
                     details:element.details,
-                    image:element.image,
+                    icon:element.icon,
                     id:element._id
                 });
             });
@@ -35,10 +35,10 @@ module.exports={
             // contact_us list
             const details={
                 title:contact_us.title,
-                slug:contact_us.slug,
+                
                 id:contact_us._id,
                 details:contact_us.details,
-                image:contact_us.image
+                icon:contact_us.icon
             }
             // console.log(details);
             res.render('backend/contact_us/edit', { title: 'contact_us Edit',layout:"backend/layout",contact_us:details });
@@ -53,9 +53,9 @@ module.exports={
             // contact_us list
             const details={
                 title:contact_us.title,
-                slug:contact_us.slug,
+                
                 details:contact_us.details,
-                image:contact_us.image
+                icon:contact_us.icon
             }
             // console.log(details);
             res.render('backend/contact_us/show', { title: 'contact_us',layout:"backend/layout",contact_us:details });
@@ -73,7 +73,7 @@ module.exports={
             }
             // /delete file
             try {
-                fs.unlink("public/"+contact_us.image,()=>{});
+                fs.unlink("public/"+contact_us.icon,()=>{});
             } catch (error) {
                 
             }
@@ -91,7 +91,7 @@ module.exports={
         let sampleFile,filePath;
         if (req.files || Object.keys(req.files).length !== 0) {
             // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-            sampleFile = req.files.image;
+            sampleFile = req.files.icon;
             let rnd=new Date().valueOf();
             filePath='upload/' +rnd+sampleFile.name;
         
@@ -108,9 +108,9 @@ module.exports={
 
         const contact_us=new ContactUsModel({
             title:req.body.title,
-            slug:req.body.slug,
+            
             details:req.body.details,
-            image:filePath
+            icon:filePath
         });
 
         contact_us.save((err,newcontact_us)=>{
@@ -135,7 +135,7 @@ module.exports={
 
         if (req.files) {
             // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-            sampleFile = req.files.image;
+            sampleFile = req.files.icon;
             let rnd=new Date().valueOf();
             filePath='upload/' +rnd+sampleFile.name;
             // Use the mv() method to place the file somewhere on your server
@@ -146,12 +146,12 @@ module.exports={
         }
         const contact_usObj={
             title:req.body.title,
-            slug:req.body.slug,
+            
             details:req.body.details
         };
 
         if(filePath){
-            contact_usObj.image=filePath;
+            contact_usObj.icon=filePath;
         }
 
         // /

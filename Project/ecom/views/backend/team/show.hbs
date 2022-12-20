@@ -14,7 +14,7 @@
 
           <div class="card">
             <div class="card-body">
-                <a class="btn btn-outline-warning btn-sm float-end my-2" href="/admin/blog/create">Create</a>
+                <a class="btn btn-outline-warning btn-sm float-end my-2" href="/admin/team/create">Create</a>
 
               <!-- Dark Table -->
               <table class="table table-dark">
@@ -22,18 +22,46 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th>Title</th>
+                        <th>Name</th>
                         <td>:</td>
                         <td>
-                            {{blog.title}}
+                            {{team.name}}
                         </td>
                     </tr>
 
                     <tr>
-                        <th>Details</th>
+                        <th>Designation</th>
                         <td>:</td>
                         <td>
-                            {{blog.details}}
+                            {{team.designation}}
+                        </td>
+                    </tr>
+                                        <tr>
+                        <th>Facebook</th>
+                        <td>:</td>
+                        <td>
+                            {{team.facebook}}
+                        </td>
+                    </tr>
+                                        <tr>
+                        <th>Twitter</th>
+                        <td>:</td>
+                        <td>
+                            {{team.twitter}}
+                        </td>
+                    </tr>
+                                        <tr>
+                        <th>Instagram</th>
+                        <td>:</td>
+                        <td>
+                            {{team.instagram}}
+                        </td>
+                    </tr>
+                                        <tr>
+                        <th>Linkedin</th>
+                        <td>:</td>
+                        <td>
+                            {{team.linkedin}}
                         </td>
                     </tr>
 
@@ -41,7 +69,7 @@
                         <th>Image</th>
                         <td>:</td>
                         <td>
-                            <img src="/{{blog.image}}" width="200px" alt="">
+                            <img src="/{{team.image}}" width="200px" alt="">
                         </td>
                     </tr>
                 </tbody>

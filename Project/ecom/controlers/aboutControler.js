@@ -14,18 +14,19 @@ module.exports={
                 data.push({
                     title:element.title,
                     details:element.details,
+                    map:element.map,
                     image:element.image,
                     id:element._id
                 });
             });
             // return res.json({abouts:docs});
-            res.render('backend/about/index', { title: 'Abouts',layout:"backend/layout",data:data });
+            res.render('backend/about_us/index', { title: 'Abouts',layout:"backend/layout",data:data });
         });
 
     },
     create:(req, res, next)=> {
         // about list
-        res.render('backend/about/create', { title: 'Abouts',layout:'backend/layout' });
+        res.render('backend/about_us/create', { title: 'Abouts',layout:'backend/layout' });
     },
     edit:(req, res, next)=> {
         //json
@@ -35,13 +36,13 @@ module.exports={
             // about list
             const details={
                 title:about.title,
-                slug:about.slug,
+                map:about.map,
                 id:about._id,
                 details:about.details,
                 image:about.image
             }
             // console.log(details);
-            res.render('backend/about/edit', { title: 'About Edit',layout:"backend/layout",about:details });
+            res.render('backend/about_us/edit', { title: 'About Edit',layout:"backend/layout",about_us:details });
         })
     },
     show:(req, res, next)=> {
@@ -53,12 +54,12 @@ module.exports={
             // about list
             const details={
                 title:about.title,
-                slug:about.slug,
+                map:about.map,
                 details:about.details,
                 image:about.image
             }
             // console.log(details);
-            res.render('backend/about/show', { title: 'About',layout:"backend/layout",about:details });
+            res.render('backend/about_us/show', { title: 'About',layout:"backend/layout",about_us:details });
         })
         .catch((err)=>{
             res.json({"error":"Somethiong went wrong!"});
@@ -77,14 +78,14 @@ module.exports={
             } catch (error) {
                 
             }
-            res.redirect("/admin/abouts");
+            res.redirect("/admin/about-us");
         });
         
     },
     store:(req, res, next)=> {
         const errors=validationResult(req);
         if(!errors.isEmpty()){
-            return res.render("backend/about/create",{layout:"backend/layout",errors:errors.mapped()})
+            return res.render("backend/about-us/create",{layout:"backend/layout",errors:errors.mapped()})
             // return res.json({errors:errors.mapped()});
         }
 
@@ -98,7 +99,7 @@ module.exports={
             // Use the mv() method to place the file somewhere on your server
             sampleFile.mv('public/'+filePath, function(err) {
             if (err)
-                res.redirect("/admin/about/create");
+                res.redirect("/admin/about-us/create");
             });
         }
 
@@ -108,16 +109,16 @@ module.exports={
 
         const about=new aboutModel({
             title:req.body.title,
-            slug:req.body.slug,
+            map:req.body.map,
             details:req.body.details,
             image:filePath
         });
 
         about.save((err,newabout)=>{
             if(err){
-                res.redirect("/admin/about/create");
+                res.redirect("/admin/about-us/create");
             }
-            res.redirect("/admin/abouts");
+            res.redirect("/admin/about-us");
         });
 
 
@@ -128,8 +129,8 @@ module.exports={
     update:(req, res, next)=> {
         const errors=validationResult(req);
         if(!errors.isEmpty()){
-            // return res.redirect("/admin/about/"+req.params.id+"/edit");
-            return res.render("backend/about/edit",{layout:"backend/layout",errors:errors.mapped()});
+            // return res.redirect("/admin/about-us/"+req.params.id+"/edit");
+            return res.render("backend/about-us/edit",{layout:"backend/layout",errors:errors.mapped()});
         }
         let sampleFile,filePath;
 
@@ -141,12 +142,12 @@ module.exports={
             // Use the mv() method to place the file somewhere on your server
             sampleFile.mv('public/'+filePath, function(err) {
                 if (err)
-                    res.redirect("/admin/about/"+req.params.id+"/edit");
+                    res.redirect("/admin/about-us/"+req.params.id+"/edit");
             });
         }
         const aboutObj={
             title:req.body.title,
-            slug:req.body.slug,
+            map:req.body.map,
             details:req.body.details
         };
 
@@ -157,9 +158,9 @@ module.exports={
         // /
         aboutModel.findByIdAndUpdate(req.params.id,aboutObj,(err,about)=>{
             if(err){
-                res.redirect("/admin/about/"+req.params.id+"/edit");
+                res.redirect("/admin/about-us/"+req.params.id+"/edit");
             }
-            res.redirect("/admin/abouts");
+            res.redirect("/admin/about-us");
         });
 
     }

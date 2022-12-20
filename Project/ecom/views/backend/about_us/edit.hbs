@@ -1,0 +1,60 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Edit</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Floating labels Form</h5>
+
+              <!-- Floating Labels Form -->
+              <form class="row g-3" method="POST" action="/admin/about-us/{{about_us.id}}/update" encType="multipart/form-data">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input value="{{about_us.title}}" type="text" class="form-control form-control-sm" id="floatingName" placeholder="Title" name="title">
+                    <label for="floatingName">Title</label>
+                    <span class="badge text-danger"> {{errors.title.msg}}</span>
+                   
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" value="{{about_us.slug}}" class="form-control form-control-sm" id="floatingName" placeholder="Slug" name="slug">
+                    <label for="floatingName">Slug</label>
+                  </div>
+                </div>
+
+
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control form-control-sm" name="details" placeholder="Address" id="floatingTextarea" style="height: 100px;" >{{about_us.details}}</textarea>
+                    <label for="floatingTextarea">Details</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="col-md-12">
+                        <label for="floatingCity">Image</label>
+                    <div class="form-floating">
+                      <img src="/{{about_us.image}}" width="200px" alt="{{about_us.title}}">
+                      <input type="file" class="form-control form-control-sm" name="image" id="floatingCity">
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+              </form><!-- End floating Labels Form -->
+
+            </div>
+          </div>
+    </section>
+</main>

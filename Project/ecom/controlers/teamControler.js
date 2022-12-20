@@ -1,6 +1,7 @@
 const { validationResult } = require('express-validator');
 const TeamModel=require('../models/Team');
 const fs=require("fs");
+const { json } = require('express');
 
 module.exports={
     index:(req, res, next)=> {
@@ -12,8 +13,12 @@ module.exports={
             const data=[];
             docs.forEach(element => {
                 data.push({
-                    title:element.title,
-                    details:element.details,
+                    name:element.name,
+                    designation:element.designation,
+                    facebook:element.facebook,
+                    twitter:element.twitter,
+                    instagram:element.instagram,
+                    linkedin:element.linkedin,
                     image:element.image,
                     id:element._id
                 });
@@ -34,10 +39,13 @@ module.exports={
         .then((team)=>{
             // team list
             const details={
-                title:team.title,
-                slug:team.slug,
+                name:team.name,
+                designation:team.designation,
+                facebook:team.facebook,
+                twitter:team.twitter,
+                instagram:team.instagram,
+                linkedin:team.linkedin,
                 id:team._id,
-                details:team.details,
                 image:team.image
             }
             // console.log(details);
@@ -52,9 +60,12 @@ module.exports={
             
             // team list
             const details={
-                title:team.title,
-                slug:team.slug,
-                details:team.details,
+                name:team.name,
+                designation:team.designation,
+                facebook:team.facebook,
+                twitter:team.twitter,
+                instagram:team.instagram,
+                linkedin:team.linkedin,
                 image:team.image
             }
             // console.log(details);
@@ -83,10 +94,12 @@ module.exports={
     },
     store:(req, res, next)=> {
         const errors=validationResult(req);
+        
         if(!errors.isEmpty()){
             return res.render("backend/team/create",{layout:"backend/layout",errors:errors.mapped()})
             // return res.json({errors:errors.mapped()});
         }
+        
 
         let sampleFile,filePath;
         if (req.files || Object.keys(req.files).length !== 0) {
@@ -102,14 +115,15 @@ module.exports={
             });
         }
 
-
-
         // /
 
         const team=new TeamModel({
-            title:req.body.title,
-            slug:req.body.slug,
-            details:req.body.details,
+            name:req.body.name,
+            designation:req.body.designation,
+            facebook:req.body.facebook,
+            twitter:req.body.twitter,
+            instagram:req.body.instagram,
+            linkedin:req.body.linkedin,
             image:filePath
         });
 
@@ -145,9 +159,12 @@ module.exports={
             });
         }
         const teamObj={
-            title:req.body.title,
-            slug:req.body.slug,
-            details:req.body.details
+            name:req.body.name,
+            designation:req.body.designation,
+            facebook:req.body.facebook,
+            twitter:req.body.twitter,
+            instagram:req.body.instagram,
+            linkedin:req.body.linkedin,
         };
 
         if(filePath){
