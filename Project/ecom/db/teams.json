@@ -1,0 +1,97 @@
+[{
+  "_id": {
+    "$oid": "63a30327c29937eaf201b8b9"
+  },
+  "name": "Mazie Adams",
+  "designation": "Sapiente esse a occaecati corrupti quidem autem.",
+  "image": "upload/1671627559606team-1.jpg",
+  "facebook": "Repudiandae est amet et qui beatae.",
+  "twitter": "Laudantium facere aut.",
+  "instagram": "Ut officia voluptates minima recusandae non non magni. Esse et quibusdam non. Magni similique aliquid voluptatem officia quasi qui.",
+  "linkedin": "Non veritatis est voluptatem debitis.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a3032cc29937eaf201b8bc"
+  },
+  "name": "Gertrude Ritchie",
+  "designation": "Dicta ea perferendis ad.",
+  "image": "upload/1671627564963team-2.jpg",
+  "facebook": "Nemo commodi et alias dolorem beatae quia labore esse.",
+  "twitter": "Explicabo eaque beatae veniam.",
+  "instagram": "Fugiat id nobis et nesciunt corrupti omnis aut. Culpa architecto voluptas animi autem est excepturi. Deleniti quidem nemo et et.",
+  "linkedin": "Architecto praesentium et eveniet.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a30332c29937eaf201b8bf"
+  },
+  "name": "Hortense Mayert",
+  "designation": "Labore similique aut dolores deserunt quaerat.",
+  "image": "upload/1671627570801team-3.jpg",
+  "facebook": "Ut alias molestiae quas.",
+  "twitter": "Nostrum consectetur rem iure accusamus deleniti inventore quisquam.",
+  "instagram": "Sunt molestiae consequuntur explicabo officiis nihil voluptatum hic omnis. Ut ipsa consequatur laboriosam corporis qui et explicabo rerum. Facilis natus reprehenderit atque nobis aut consequatur error at nam.",
+  "linkedin": "Et velit necessitatibus voluptas et a molestias aut quaerat animi.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a30338c29937eaf201b8c2"
+  },
+  "name": "Amara Ledner",
+  "designation": "Consectetur est ipsa pariatur quaerat neque tenetur.",
+  "image": "upload/1671627576868testimonial-1.jpg",
+  "facebook": "Quia quia est cupiditate adipisci odit.",
+  "twitter": "Doloribus odit maiores dolorem perspiciatis iste.",
+  "instagram": "Qui eligendi et non suscipit voluptatum dolores est explicabo pariatur. Laudantium enim minima vitae enim. Ea voluptatibus omnis beatae consequatur.",
+  "linkedin": "Non magnam excepturi ratione.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a3033fc29937eaf201b8c5"
+  },
+  "name": "Urban Fisher",
+  "designation": "Dolores quibusdam a minima.",
+  "image": "upload/1671627583270testimonial-2.jpg",
+  "facebook": "Et praesentium et iure cum saepe harum.",
+  "twitter": "Hic maiores ea perspiciatis esse.",
+  "instagram": "Ut sed quia modi ipsa minus perspiciatis. Quo molestiae qui dicta sapiente fugiat. Quas et omnis aut odit ea voluptatum beatae non.",
+  "linkedin": "Omnis expedita voluptas rerum dolores.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a30347c29937eaf201b8c8"
+  },
+  "name": "Lilian Boyer",
+  "designation": "Earum unde tenetur et eaque illum laborum explicabo eum.",
+  "image": "upload/1671627591484testimonial-3.jpg",
+  "facebook": "Praesentium nesciunt minus optio quia quis recusandae facere.",
+  "twitter": "Aut quod omnis facilis delectus dolores aut qui explicabo assumenda.",
+  "instagram": "Et voluptatem aut excepturi qui dolorem molestias porro. Voluptas et cumque maiores quo molestias. Quis ut reprehenderit aut quia quo.",
+  "linkedin": "Sed accusamus modi repellendus quam maiores enim officia expedita eaque.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a3034dc29937eaf201b8cb"
+  },
+  "name": "Polly Bruen",
+  "designation": "Qui alias est consequuntur rerum.",
+  "image": "upload/1671627597449testimonial-4.jpg",
+  "facebook": "Dolorum incidunt molestias quis.",
+  "twitter": "Consequatur porro et quaerat ullam voluptatem odio culpa blanditiis animi.",
+  "instagram": "Ipsa eius quis cumque minus qui beatae sapiente. Facilis enim odit nemo quae ea sit velit illo ex. Aut alias tempore quis velit ex.",
+  "linkedin": "Optio provident voluptates saepe magni.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a30352c29937eaf201b8ce"
+  },
+  "name": "Serenity Moen",
+  "designation": "Exercitationem ipsum iure amet quia cupiditate quam.",
+  "image": "upload/1671627602779testimonial-5.jpg",
+  "facebook": "Blanditiis facere veritatis id fuga.",
+  "twitter": "Nihil deserunt et et ipsum sed.",
+  "instagram": "Officiis blanditiis voluptatibus nesciunt placeat quos perferendis id. Dolorem ullam quia nemo culpa alias. Et officia nisi ut quibusdam.",
+  "linkedin": "Enim eligendi facere ea maiores et.",
+  "__v": 0
+}]

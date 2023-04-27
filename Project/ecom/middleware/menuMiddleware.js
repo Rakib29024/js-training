@@ -1,6 +1,7 @@
+
 module.exports={
     menus:(req,res,next)=>{
-        res.locals.menu="Something";
+        res.locals.currentMenu=req.path;
         next();
     }
 }

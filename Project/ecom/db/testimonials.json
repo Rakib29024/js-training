@@ -1,0 +1,46 @@
+[{
+  "_id": {
+    "$oid": "63a30371c29937eaf201b8d4"
+  },
+  "name": "Adelle Hayes",
+  "details": "98442 Zemlak Shoal",
+  "designation": "Est reiciendis quaerat nostrum aspernatur sint id velit.",
+  "image": "upload/1671627633404testimonial-2.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a30376c29937eaf201b8d7"
+  },
+  "name": "Carleton Mraz",
+  "details": "4209 Huels Fort",
+  "designation": "Porro enim molestias qui quia.",
+  "image": "upload/1671627638592testimonial-1.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a30382c29937eaf201b8da"
+  },
+  "name": "Giovanni Cummerata",
+  "details": "95 Johnson Locks",
+  "designation": "Est laborum sed pariatur cupiditate doloribus autem temporibus non.",
+  "image": "upload/1671627650296team-3.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a30291c29937eaf201b8dd"
+  },
+  "name": "Emelie Ondricka",
+  "details": "1516 Audrey Landing",
+  "designation": "Sed porro molestias est commodi ea voluptatem dolor quia ut.",
+  "image": "upload/1671627409048team-2.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a30296c29937eaf201b8e0"
+  },
+  "name": "Jules Kassulke",
+  "details": "66998 Lexie Canyon",
+  "designation": "Aut totam minima eum rem dolore.",
+  "image": "upload/1671627414176team-1.jpg",
+  "__v": 0
+}]

@@ -15,6 +15,12 @@ const contactUsRequest=require('../request/contactUs');
 const sliderRequest=require('../request/slider');
 /* GET home page. */
 
+// /middlewares
+const {menus}=require("../middleware/menuMiddleware");
+router.use(menus);
+
+
+
 router.get('/',DashboardController.index);
 
 //blog

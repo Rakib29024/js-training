@@ -1,0 +1,82 @@
+[{
+  "_id": {
+    "$oid": "63a302d2c29937eaf201b89b"
+  },
+  "title": "Central Web Consultant",
+  "slug": "Lead Functionality Manager",
+  "details": "91718 Goodwin River",
+  "image": "upload/1671627474355portfolio-1.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a302d8c29937eaf201b89e"
+  },
+  "title": "Internal Communications Director",
+  "slug": "Regional Response Technician",
+  "details": "46176 Samir Trafficway",
+  "image": "upload/1671627480421portfolio-2.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a302ddc29937eaf201b8a1"
+  },
+  "title": "Central Functionality Executive",
+  "slug": "National Assurance Strategist",
+  "details": "33938 Mohr River",
+  "image": "upload/1671627485918portfolio-3.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a302e4c29937eaf201b8a4"
+  },
+  "title": "Direct Response Administrator",
+  "slug": "International Research Assistant",
+  "details": "90384 Goyette Circles",
+  "image": "upload/1671627492872portfolio-9.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a302edc29937eaf201b8a7"
+  },
+  "title": "Dynamic Branding Director",
+  "slug": "Direct Communications Assistant",
+  "details": "51614 Alicia Forge",
+  "image": "upload/1671627501368portfolio-8.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a302f5c29937eaf201b8aa"
+  },
+  "title": "Internal Tactics Producer",
+  "slug": "Global Group Producer",
+  "details": "971 Wiza Track",
+  "image": "upload/1671627509735portfolio-6.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a30304c29937eaf201b8ad"
+  },
+  "title": "Regional Identity Architect",
+  "slug": "Regional Infrastructure Engineer",
+  "details": "2835 Enola Ramp",
+  "image": "upload/1671627524629portfolio-5.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a30309c29937eaf201b8b0"
+  },
+  "title": "Forward Branding Architect",
+  "slug": "Human Data Analyst",
+  "details": "356 Ashton Highway",
+  "image": "upload/1671627529661portfolio-5.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a3030ec29937eaf201b8b3"
+  },
+  "title": "District Response Officer",
+  "slug": "Dynamic Solutions Planner",
+  "details": "285 Gerlach Alley",
+  "image": "upload/1671627534637portfolio-details-3.jpg",
+  "__v": 0
+}]

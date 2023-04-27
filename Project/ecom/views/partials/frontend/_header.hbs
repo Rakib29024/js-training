@@ -1,9 +1,5 @@
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
-    
-    <h1>
-      {{menu}}
-    </h1>
 
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
@@ -31,11 +27,11 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="/">Home</a></li>
-          <li><a class="nav-link scrollto" href="/about">About</a></li>
-          <li><a class="nav-link scrollto" href="/testimonials">Testimonial</a></li>
+          <li><a class="nav-link scrollto {{ifTwo "/" currentMenu}}" href="/">Home</a></li>
+          <li><a class="nav-link scrollto {{ifTwo "/about" currentMenu}}" href="/about">About</a></li>
+          <li><a class="nav-link scrollto {{ifTwo "/testimonials" currentMenu}}" href="/testimonials">Testimonial</a></li>
 
-          <li><a class="nav-link scrollto" href="/team">Team</a></li>
+          <li><a class="nav-link scrollto {{ifTwo "/team" currentMenu}}" href="/team">Team</a></li>
           {{!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -53,8 +49,9 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li> --}}
-          <li><a class="nav-link scrollto" href="/blogs">Blog</a></li>
-          <li><a class="nav-link scrollto " href="/contact-us">Contact Us</a></li>
+          <li><a class="nav-link scrollto {{ifTwo "/blogs" currentMenu}}" href="/blogs">Blog</a></li>
+          <li><a class="nav-link scrollto {{ifTwo "/contact-us" currentMenu}}" href="/contact-us">Contact Us</a></li>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

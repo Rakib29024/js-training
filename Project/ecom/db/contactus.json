@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "63a3045cc29937eaf201b8ed"
+  },
+  "title": "ADDRESS",
+  "details": "A108 Adam Street, NY 535022, USA",
+  "icon": "upload/1671627868264location_xi984zv1l47m_64.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a3046ec29937eaf201b8f0"
+  },
+  "title": "PHONE NUMBER",
+  "details": "+1 5589 55488 55",
+  "icon": "upload/1671627886878phone_v2bfsg1ajcrg_64.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a3047ec29937eaf201b8f3"
+  },
+  "title": "EMAIL",
+  "details": "info@example.com",
+  "icon": "upload/1671627902730email_ag9kbj0xjc4q_64.png",
+  "__v": 0
+}]

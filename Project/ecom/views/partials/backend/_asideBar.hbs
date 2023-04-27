@@ -1,65 +1,62 @@
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
-
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="/admin">
-          <i class="bi bi-grid"></i>
+        <a class="nav-link {{ifTwo "/" currentMenu}}" href="/admin">
+          <i class="bi bi-speedometer"></i>
           <span>Dashboard</span>
         </a>
       </li>
       
 
         <li class="nav-item">
-        <a class="nav-link " href="/admin/blogs">
-          <i class="bi bi-grid"></i>
+        <a class="nav-link {{ifTwo "/blogs" currentMenu}}" href="/admin/blogs">
+          <i class="bi bi-back"></i>
           <span>Blog</span>
         </a>
       </li>
 
               <li class="nav-item">
-        <a class="nav-link " href="/admin/teams">
-          <i class="bi bi-grid"></i>
+        <a class="nav-link {{ifTwo "/teams" currentMenu}}" href="/admin/teams">
+          <i class="bi bi-people-fill"></i>
           <span>Team</span>
         </a>
       </li>
       
 
               <li class="nav-item">
-        <a class="nav-link " href="/admin/testimonials">
-          <i class="bi bi-grid"></i>
+        <a class="nav-link {{ifTwo "/testimonials" currentMenu}}" href="/admin/testimonials">
+          <i class="bi bi-person-badge"></i>
           <span>Testimonial</span>
         </a>
       </li>
       
 
               <li class="nav-item">
-        <a class="nav-link " href="/admin/about-us">
-          <i class="bi bi-grid"></i>
+        <a class="nav-link {{ifTwo "/about-us" currentMenu}}" href="/admin/about-us">
+          <i class="bi bi-info-square"></i>
           <span>About-us</span>
         </a>
       </li>
       
 
               <li class="nav-item">
-        <a class="nav-link " href="/admin/contact-us">
-          <i class="bi bi-grid"></i>
+        <a class="nav-link {{ifTwo "/contact-us" currentMenu}}" href="/admin/contact-us">
+          <i class="bi bi-headset"></i>
           <span>Contact-us</span>
         </a>
       </li>
       
 
               <li class="nav-item">
-        <a class="nav-link " href="/admin/sliders">
-          <i class="bi bi-grid"></i>
+        <a class="nav-link {{ifTwo "/sliders" currentMenu}}" href="/admin/sliders">
+          <i class="bi bi-images"></i>
           <span>Slider</span>
         </a>
       </li>
       
-      
-
-
+    {{ifTwo "/" currentMenu}}
 
       {{!-- <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
